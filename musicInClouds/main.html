@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>くものうえ、うた</title>
+  <link rel='stylesheet' href="fonts/fuwamocofont/fuwamocofont.ttf">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="overlay">
+      <p>Miku going to you...</p>
+      <div id = "loading"></div>
+    </div>
+    
+    <div id="media"></div>
+    
+    <div id = "audience">
+    </div>
+
+    <canvas id="cloud" width = '1920' height = '1080'></canvas>
+    <div id = "clickCircle"></div>
+    
+    <div id="miku">
+      <canvas id="character" class = "disabled" alt="miku's image" width = "2000px" height= "2000px"></canvas>
+    </div>
+    
+    <div id = "passingCloud">
+      <img id = "cloud1" class = "movingCloud" src = "images/cloudSprite1.png">
+      <img id = "cloud2" class = "movingCloud" src = "images/cloudSprite2.png">
+      <img id = "cloud3" class = "movingCloud" src = "images/cloudSprite3.png">
+    </div>
+
+    <div id="lyrics">
+      <div id="text"></div>
+    </div>
+    
+    <div id = "manipulate">
+      <img id = "fillCloud" src = "images/fill_cloud.png" alt="fill the cloud">
+      <img id = "settings" src = "images/settings.png" alt="open settings">
+      <div id = rangeBars>
+        <div>
+          <p class = "japanese">トラックの半径</p>
+          <p class = "english">Radius of Track</p>
+          <input id = "trackRadius" class = "range" max = "50" min = "5" step = "1" value = "8" type = "range">
+        </div>
+        <div>
+          <p class = "japanese">トラックのブラー</p>
+          <p class = "english">Blur of Track</p>
+          <input id = "trackBlur" class = "range" max = "32" min = "0" step = "1" value = "8" type = "range">
+        </div>
+        <div>
+          <p class = "japanese">ミクの速度</p>
+          <p class = "english">Speed of Miku</p>
+          <input id = "trackSpeed" class = "range" max = "1000" min = "100" step = "10" value = "250" type = "range">
+        </div>
+      </div>
+      <img id = "tracking" src = "images/enableTracking.png" alt = "disable tracking">
+      <img id = "replay" class = "disabled" src = "images/replay.png" alt = "replay">
+
+      <div id = "autoDraw">
+        <div id = "drawButtons">
+          <div id = "particles" class = "buttonSet">
+            <p class = "japanese">パーティクル(Particle)</p>
+            <img id = "a01" class = "particle" src = "images/particle01.png" alt = "particle indicating 0 and 1 in miku's arm">
+            <img id = "heart" class = "particle" src = "images/particleHeart.png" alt = "a heart particle">
+            <img id = "snow" class = "particle" src = "images/particleSnow.png" alt = "a snow particle">
+            <img id = "star" class = "particle" src = "images/particleStar.png" alt = "a star particle">
+            <img id = "music1" class = "particle" src = "images/particleMusic1.png" alt = "a single note particle">
+            <img id = "music2" class = "particle" src = "images/particleMusic2.png" alt = "a particle with 2 notes">
+            <img id = "SOnion" class = "particle" src = "images/particleSOnion.png" alt = "green onion particle of miku">
+          </div>
+          <div id = "sets" class = "buttonSet">
+            <p class = "japanese">セット(Set)</p>
+            <img id = "mikuJp" class = "set" src = "images/setMikuJp.png" alt = "write miku in Japanese">
+            <img id = "mikuEng" class = "set" src = "images/setMikuEng.png" alt = "write miku in English">
+            <img id = "hero" class = "set" src = "images/setHero.png" alt = "write hero in English">
+            <img id = "mirai" class = "set" src = "images/setMirai.png" alt = "write mirai in Japanese">
+            <img id = "mikuDraw" class = "set" src = "images/setMiku.png" alt = "draw miku smiling">
+          </div>
+        </div>
+        <canvas id = "panel" width = "600px" height = "300px"></canvas>
+      </div>
+    </div>
+
+    <div id = "screenshot">
+      <canvas id = "screenshotButton" class = "" width = "40px" height = "40px" alt = "remove UI buttons for screenshot, or show it all again"></canvas>
+    </div>
+
+    <div id = "slide">
+      <div id = "title">
+        <img id = "titleText" src="images/titleImage.png" alt = "title-Kumonoue, Uta(The song on the clouds)">
+      </div>
+      <div id = "startButton" >
+        <img id = "startBg" src="images/start_bg.png" alt = "start button's background">
+        <img id = "startTriangle" src = "images/start_triangle.png" alt = "start button's triangle shape">
+      </div>
+      <a href = "#" id = "nextSong">></a>
+      <a href = "#" id = "previousSong"><</a>
+      <div id = "slideList">
+        <div id = "song0" class = "songs">
+          <h1>king妃jack躍</h1>
+        </div>
+        <div id = "song1" class = "songs">
+          <h1>生きること</h1>
+        </div>
+        <div id = "song2" class = "songs">
+          <h1>唱明者</h1>
+        </div>
+        <div id = "song3" class = "songs">
+          <h1>ネオンライトの海を往く</h1>
+        </div>
+        <div id = "song4" class = "songs">
+          <h1>ミュウテイション</h1>
+        </div>
+        <div id = "song5" class = "songs">
+          <h1>Entrust via 39</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id = "information">
+      <img id = "howToPlay" src = "images/howToPlay.png" alt = "How to play">
+      <img id = "howToPlayExit" src = "images/howToPlayExit.png" alt = "exit">
+    </div>
+
+    <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
+    <script src='https://unpkg.com/textalive-app-api/dist/index.js'></script><script  src="./script.js"></script>
+    
+    </body>
+</html>

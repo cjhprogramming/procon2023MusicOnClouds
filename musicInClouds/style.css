@@ -1,0 +1,610 @@
+@font-face {
+  font-family: "jkMaru";
+  src: url(./fonts/jkmarugo/JK-Maru-Gothic-M.otf)
+}
+
+/*      */
+/* html */
+/*      */
+
+html {
+  font-family: "jkMaru";
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*      */
+/* body */
+/*      */
+
+body {
+    background: #000000;
+    background-image: linear-gradient(
+      0deg,
+      #242424 0,
+      #444444 70%,
+      #888888 90%,
+      #b5b5b5 100%
+    );
+    margin: 0;
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+    overflow: hidden;
+}
+
+/*         */
+/* overlay */
+/*         */
+
+#overlay {
+  user-select: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  background: #00000099;
+  color: #fffc;
+  z-index: 50;
+
+  animation-name: appear;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+#overlay.disabled {
+  display: none;
+}
+#overlay > p {
+  position: absolute;
+  top: 40vh;
+  width: 100vw;
+  font-size: 40px;
+  text-align: center;
+}
+
+#loading{
+  position: absolute;
+  z-index: inherit;
+  border: solid #242424;
+  border-top-color: #b3b3b3;
+  border-radius: 50%;
+  border-width: 2px;
+  width: 4vw;
+  height: 4vw;
+  top: 50vh;
+  left: 48vw;
+
+  animation-name: rotating;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+/*          */
+/* mediabar */
+/*          */
+
+#media {
+  bottom: 10px;
+}
+#media.disabled > .textalive-media-wrapper {
+  width: 0;
+  height: 0;
+}
+
+/*          */
+/* audience */
+/*          */
+
+#audience {
+  position: absolute;
+}
+.audienceBody{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.3;
+}
+.audienceArmMove{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0.3;
+
+  animation-name: rotating;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+/*                  */
+/* background cloud */
+/*                  */
+
+#cloud {
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff00;
+    position:relative;
+}
+
+/*           */
+/* character */
+/*           */
+
+#character {
+  position:absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  background: #ffffff00;
+  transition-duration: 03s;
+  transition-timing-function: linear;
+  width: 20vh;
+  height: 20vh;
+}
+#character.disabled {
+  opacity: 0;
+}
+#character.able {
+  animation-name: appear;
+  animation-iteration-count: 1;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/*                                      */
+/* circle appearing at clicked position */
+/*                                      */
+
+.newCircle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  width: 5vh;
+  height: 5vh;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  pointer-events : none;
+
+  animation-name: create_and_delete;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/*                                   */
+/* cloud passing through the display */
+/*                                   */
+
+#passingCloud {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.movingCloud {
+  -webkit-tap-highlight-color : transparent !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  opacity: 0.4;
+
+  transition-duration: 0.01s;
+  transition-timing-function: linear;
+}
+
+/*            */
+/* manipulate */
+/*            */
+
+#manipulate.disabled {
+  visibility: hidden;
+  overflow: hidden;
+  display: none;
+}
+
+/* fillcloud */
+
+#fillCloud {
+  width: 10vh;
+  height: 10vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  filter: drop-shadow(1px 1px 1px #000);
+}
+
+/* settings */
+
+#settings {
+  width: 10vh;
+  height: 10vh;
+  position: absolute;
+  right: 0;
+  top: 10%;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+#rangeBars {
+  opacity: 0;
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 100vw;
+  top: 20%;
+  background-color:#ffdbf4;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-color: #000000;
+  border: 2px solid;
+
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+p{
+  margin: 4px;
+  text-align: center;
+  font-size: 15px;
+}
+p.japanese{
+  height: 15px;
+  font-size: 15px;
+}
+p.english{
+  height: 12px;
+  font-size: 12px;
+}
+.range {
+  display: flex;
+  accent-color: rgb(255, 0, 102);
+}
+
+/* tracking */
+
+#tracking{
+  position: absolute;
+  left: 3vh;
+  bottom: 3vh;
+  height: 10vh;
+}
+
+/* replay */
+
+#replay {
+  position: absolute;
+  width: 4vw;
+  height: 4vw;
+  left: 48vw;
+  top: 71vh;
+  transition-duration: 0.5s;
+  filter: drop-shadow(1px 1px 1px #000);
+}
+#replay:hover {
+  rotate: 270deg;
+}
+#replay.disabled {
+  overflow: hidden;
+  visibility: hidden;
+  display: none;
+}
+
+/* autoplay */
+
+#panel{
+  position: absolute;
+  width: 6vw;
+  height: 3vw;
+  top: 0;
+  left: 47vw;
+  background:#ffffff00;
+
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+#drawButtons{
+  position: absolute;
+  width: 60vw;
+  height: 30vh;
+  bottom: 100vh;
+  left: 20vw;
+  border: 8px solid;
+  background-color: #ffffff;
+  border-color: #ffbcb7;
+  border-radius: 3vh;
+
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+.buttonSet {
+  padding-top: 3vh;
+  vertical-align: middle;
+}
+#particles, #sets{
+  position: relative;
+  display: flex;
+}
+#particles > p, #sets > p{
+  width: 100px;
+  text-align: center;
+}
+.particle, .set{
+  position: relative;
+  width: 6vw;
+  height: 4vw;
+  margin: 10px;
+  border: solid #000000;
+  border-radius: 20px;
+  border-width: 5px;
+}
+
+/*                 */
+/* screenshot mode */
+/*                 */
+
+#screenshotButton {
+  position:absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 0.5;
+  transition-duration: 0.5s;
+}
+#screenshotButton.disabled {
+  visibility: hidden;
+  display: none;
+  overflow: hidden;
+}
+#screenshotButton:hover {
+  opacity: 1;
+}
+
+/*                     */
+/* song selection, etc */
+/*                     */
+
+#slide.disabled {
+  animation-name: delete;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/* title */
+
+#title {
+  pointer-events : none;
+  position: absolute;
+  display: flex;
+  top: 14vh;
+  left: 0;
+  width: 100vw;
+  height: auto;
+}
+#titleText{
+  height: 40vh;
+  margin: auto;
+}
+#title h1 {
+  text-align: center;
+  font-size: 15vh;
+  color: #000000;
+  text-shadow: #ffffff 0 0 5px;
+}
+
+/* song list */
+
+#slideList {
+  position: absolute;
+  width: 100vw;
+  height: 7vh;
+  top: 60vh;
+  left: 0;
+  display: inline-flex;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+.songs h1{
+  pointer-events : none;
+  position: relative;
+  z-index: 99;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 7vh;
+  color: #474747;
+}
+#nextSong, #previousSong {
+  z-index: 100;
+  top:60vh;
+  height: 7vh;
+  position: absolute;
+  color: gray;
+  text-decoration: none;
+  font-size: 7vh;
+  cursor: pointer;
+}
+#nextSong:hover, #previousSong:hover {
+  color: black;
+  transition: all 0.2s ease;
+}
+#nextSong{
+  right:28vw;
+}
+#previousSong{
+  left:28vw;
+}
+
+/* start button */
+
+#startButton{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height:10vh;
+  top: 80vh;
+}
+#startBg{
+  transition: all 0.2s ease;
+  position: absolute;
+  width: 10vh;
+  height: 10vh;
+  top: 0;
+}
+#startTriangle{
+  pointer-events : none;
+  transition: all 0.2s ease;
+  position: absolute;
+  height: 6vh;
+  top: 2vh;
+}
+
+/*        */
+/* lyrics */
+/*        */
+
+#lyrics {
+  pointer-events : none;
+  z-index: 0;
+  line-height: 2em;
+  font-size: 4vh;
+  font-weight: 1000;
+  font-family: "jkMaru";
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  user-select: none;
+}
+.newLyr {
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+
+  animation-name: getOlder;
+  animation-iteration-count: 1;
+  animation-duration: 3.33s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/*             */
+/* how to play */
+/*             */
+
+#information {
+  z-index: 1000;
+}
+#information.disabled{
+  visibility: hidden;
+  display: none;
+  overflow: hidden;
+}
+#howToPlay {
+  position: absolute;
+  z-index: inherit;
+  top: 10vh;
+  left: 15vw;
+  height: 80vh;
+  width: 70vw;
+}
+#howToPlayExit {
+  z-index: inherit;
+  position: absolute;
+  top: 11vh;
+  right: 15.5vw;
+  width: 3vw;
+}
+
+/*           */
+/* animation */
+/*           */
+
+@keyframes appear {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes getOlder {
+  0% {
+    scale: 1;
+    opacity: 0;
+  }
+  15% {
+    scale: 1.4;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+    scale: 0.6;
+    color:#8b8b8b
+  }
+}
+
+@keyframes create_and_delete {
+  0% {
+    opacity: 1;
+    transform: scale(0.01);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+    overflow: hidden;
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@keyframes create_and_delete1 {
+0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  98% {
+    opacity:0;
+    transform:scale(0);
+  }
+  100% {
+    opacity:0;
+    overflow:hidden;
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@keyframes delete {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    overflow: hidden;
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@keyframes rotating {
+  0% {
+    rotate: 80deg;
+  }
+  100% {
+    rotate: -80deg;
+  }
+}
+
+@keyframes rotating {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
