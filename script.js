@@ -206,18 +206,16 @@ function resetChars() {
 }
 
 //Display Audience
-var horizontalAudience = Math.floor(canvas.offsetWidth/140), verticalAudience = Math.floor(canvas.offsetHeight/90);
+var horizontalAudience = Math.floor(canvas.offsetWidth/160)+2, verticalAudience = Math.floor(canvas.offsetHeight/140)+2;
 for(var i = 0; i<horizontalAudience; i++){
   for(var j = 0; j<verticalAudience; j++){
     var audienceSet = document.createElement('var');
     
     var audiencePic = document.createElement('img');
-    var adjustx = 10-Math.floor(Math.random()*20);
-    var adjusty = 10-Math.floor(Math.random()*20);
-    audiencePic.src = "images/audience.png";
+    audiencePic.src = "images/audienceNew.png";
     audiencePic.className = "audienceBody";
-    audiencePic.style.left = (canvas.offsetWidth-horizontalAudience*160)/2 + i*140 + adjustx+ "px";
-    audiencePic.style.top = (canvas.offsetHeight-verticalAudience*90)/2 + j*90 + adjusty+ "px";
+    audiencePic.style.left = (canvas.offsetWidth-horizontalAudience*160)/2 + i*160 + "px";
+    audiencePic.style.top = (canvas.offsetHeight-verticalAudience*140)/2 + j*140 + "px";
     audienceSet.appendChild(audiencePic);
     
     var sweetOnion = Math.random();
@@ -233,10 +231,10 @@ for(var i = 0; i<horizontalAudience; i++){
     }
     audienceArm1.className = "audienceArmMove";
     audienceArm2.className = "audienceArmMove";
-    audienceArm1.style.left = (canvas.offsetWidth-horizontalAudience*110)/2 + i*110 + adjustx + "px"
-    audienceArm2.style.left = (canvas.offsetWidth-horizontalAudience*110)/2 + i*110 +60 + adjustx + "px"
-    audienceArm1.style.top = (canvas.offsetHeight-verticalAudience*80)/2 + j*80 + 20 + adjusty + "px";
-    audienceArm2.style.top = (canvas.offsetHeight-verticalAudience*80)/2 + j*80 + 20 + adjusty + "px";
+    audienceArm1.style.left = (canvas.offsetWidth-horizontalAudience*160)/2 + i*160 + -10 + "px"
+    audienceArm2.style.left = (canvas.offsetWidth-horizontalAudience*160)/2 + i*160 + 65 + "px"
+    audienceArm1.style.top = (canvas.offsetHeight-verticalAudience*140)/2 + j*140 + 70 + "px";
+    audienceArm2.style.top = (canvas.offsetHeight-verticalAudience*140)/2 + j*140 + 70 + "px";
     audienceSet.appendChild(audienceArm1);
     audienceSet.appendChild(audienceArm2);
 

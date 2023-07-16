@@ -76,7 +76,7 @@ body {
   top: 50vh;
   left: 48vw;
 
-  animation-name: rotating;
+  animation-name: rotatingTotally;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
@@ -108,8 +108,8 @@ body {
 }
 .audienceArmMove{
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   opacity: 0.3;
 
   animation-name: rotating;
@@ -600,7 +600,7 @@ p.english{
   }
 }
 
-@keyframes rotating {
+@keyframes rotatingTotally {
   0% {
     rotate: 0deg;
   }
