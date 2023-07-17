@@ -203,6 +203,9 @@ body {
 /* manipulate */
 /*            */
 
+#manipulate {
+  z-index: 100;
+}
 #manipulate.disabled {
   visibility: hidden;
   overflow: hidden;
@@ -487,7 +490,7 @@ p.english{
 
 #lyrics {
   pointer-events : none;
-  z-index: 0;
+  z-index: 9000;
   line-height: 2em;
   font-size: 5vh;
   font-weight: 1000;
@@ -559,7 +562,6 @@ p.english{
   100% {
     opacity: 0.5;
     scale: 0.6;
-    color:#8b8b8b
   }
 }
 

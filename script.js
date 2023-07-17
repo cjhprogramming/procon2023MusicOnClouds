@@ -91,6 +91,7 @@ var characStat = 0, characDirection = 3;
 var willTrack = true;
 var autoPlay = false;
 var selectedRadius = trackRadius.value, selectedBlur = trackBlur.value, selectedSpeed = trackSpeed.value; 
+var colorSeq = 0;
 var radius = 80, angle = 0;
 
 function isMobile() {
@@ -105,7 +106,7 @@ if (!mobile){
 }
 
 var xposit = canvas.offsetWidth/2-charac.offsetWidth/2;
-var yposit = canvas.offsetHeight/2+charac.offsetHeight/2;
+var yposit = canvas.offsetHeight/2-charac.offsetHeight/2;
 charac.style.transitionDuration = "0s";
 charac.style.transform = "translate("+ xposit + "px," + yposit + "px)";
 
@@ -168,6 +169,16 @@ function delChar() {
   }, b.duration*2);
 }
 
+const colors = [
+  "rgb(255, 0, 225)",
+  "rgb(255, 98, 0)",
+  "rgb(255, 208, 0)",
+  "rgb(0, 255, 102)",
+  "rgb(0, 123, 255)",
+  "rgb(60, 0, 255)",
+  "rgb(208, 0, 255)"
+];
+
 //Add a new character
 function newChar(current) {
   
@@ -178,15 +189,15 @@ function newChar(current) {
 
   container.style.position = "absolute";
   container.className = "newLyr"
+  container.style.color = colors[colorSeq];
+  colorSeq = (colorSeq+1)%7;
   if (lyricStat == 1){
-    container.style.color = "rgb(0, 60, 225)";
     container.style.left = Math.max(0, Math.min(canvas.offsetWidth-30, charac.getBoundingClientRect().left+charac.offsetWidth/2+div.offsetWidth/2+Math.cos(angle)*radius))+"px";
     container.style.top = Math.max(0, Math.min(canvas.offsetHeight*0.92, charac.getBoundingClientRect().top+charac.offsetHeight*3/5+div.offsetHeight/2+Math.sin(angle)*radius))+"px";
     angle = angle+(Math.PI/8);
     radius = radius+15;
   }
   if (lyricStat == 2){
-    container.style.color = "rgb(255, 0, 225)";
     container.style.left = Math.max(0, Math.min(canvas.offsetWidth-30, charac.getBoundingClientRect().left+charac.offsetWidth/2-container.offsetWidth/2))+"px";
     container.style.top = Math.max(0, Math.min(canvas.offsetHeight*0.92, charac.getBoundingClientRect().top+charac.offsetHeight-30))+"px";
   }
@@ -202,6 +213,9 @@ function newChar(current) {
 //Delete all characters created
 function resetChars() {
   c = null;
+  colorSeq = 0;
+  radius = 80;
+  angle = 0;
   while (textContainer.firstChild)
     textContainer.removeChild(textContainer.firstChild);
   passingCloud.replaceChildren();
