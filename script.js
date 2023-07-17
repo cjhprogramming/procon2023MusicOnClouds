@@ -636,7 +636,7 @@ const toMove01 = [ //type, x, y
   [false, 75, -10],
   [true, 0, 0]
 ];
-const k01 = 1.2;
+const k01 = 1.4;
 
 const toMoveHeart = [
   [false, 15, -15],
@@ -648,7 +648,7 @@ const toMoveHeart = [
   [false, -15, -15],
   [false, 0, 0]
 ];
-const kHeart = 1;
+const kHeart = 2;
 
 const toMoveSnow = [
   [false, 15, -26],
@@ -697,7 +697,7 @@ const toMoveStar = [
   [false, 81, 59],
   [false, 0, 0]
 ];
-const kStar = 1;
+const kStar = 1.5;
 
 const toMoveMusic1 = [
   [false, 11, -11],
