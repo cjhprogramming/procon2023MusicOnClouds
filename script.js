@@ -1234,7 +1234,7 @@ function generateLight() {
   lightSky.style.transform = "translate(" + (Math.floor(Math.random()*(canvas.offsetWidth-lightSky.offsetWidth))+lightSky.offsetWidth*2) + "px, -" + canvas.offsetHeight*1.2 + "px)";
   setTimeout(() => {
     lightSky.style.transitionDuration = "9.5s";
-    lightSky.style.transform = "translate(" + (lightSky.getBoundingClientRect().left - 500) + "px, " + canvas.offsetHeight*3.2 + "px)";
+    lightSky.style.transform = "translate(" + (lightSky.getBoundingClientRect().left - 500) + "px, " + canvas.offsetHeight*3 + "px)";
   }, 100);
   var lightFromSky = setInterval(() => {
     if(!nowPlaying) {
@@ -1245,7 +1245,7 @@ function generateLight() {
       lightSky.style.transform = "translate(" + (Math.floor(Math.random()*(canvas.offsetWidth-lightSky.offsetWidth))+lightSky.offsetWidth*2) + "px, -" + canvas.offsetHeight*1.2 + "px)";
       setTimeout(() => {
         lightSky.style.transitionDuration = "9.5s";
-        lightSky.style.transform = "translate(" + (lightSky.getBoundingClientRect().left - 500) + "px, " + canvas.offsetHeight*3.2 + "px)";
+        lightSky.style.transform = "translate(" + (lightSky.getBoundingClientRect().left - 500) + "px, " + canvas.offsetHeight*3 + "px)";
       }, 100);
     }
   }, 10000);
