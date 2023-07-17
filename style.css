@@ -104,13 +104,13 @@ body {
   position: absolute;
   width: 200px;
   height: 200px;
-  opacity: 0.3;
+  filter: brightness(50%);
 }
 .audienceArmMove{
   position: absolute;
   width: 150px;
   height: 150px;
-  opacity: 0.3;
+  filter: brightness(50%);
 
   animation-name: rotating;
   animation-iteration-count: infinite;
