@@ -147,12 +147,12 @@ player.addListener({
       return;
     }
 
-    if (c && c.startTime > position + 300) {
+    if (c && c.startTime > position + 100) {
       resetChars();
     }
 
     let current = c || player.video.firstChar;
-    while (current && current.startTime < position + 300) {
+    while (current && current.startTime < position + 100) {
       if (c !== current) {
         newChar(current);
         c = current;
