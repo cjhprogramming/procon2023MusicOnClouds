@@ -391,8 +391,8 @@ function setDirection(x1, y1, x2, y2) {
     }
   }
   console.log((dx)+", "+(dy)+", "+(characDirection));
-  characCtx.clearRect(0, 0, 1000, 1000);
-  characCtx.drawImage(characSprites[characDirection][characStat][frame[characStat]], 0, 0, 1000, 1000);
+  characCtx.clearRect(0, 0, 500, 500);
+  characCtx.drawImage(characSprites[characDirection][characStat][frame[characStat]], 0, 0, 500, 500);
 }
 
 var globalStopTracing = true;
@@ -1236,8 +1236,8 @@ function generatePassingClouds(){
 //Character sprites
 //Initialize
 characSprites[3][0][0].addEventListener('load', function() {
-  characCtx.clearRect(0, 0, 1000, 1000);
-  characCtx.drawImage(characSprites[3][0][0], 0, 0, 1000, 1000);
+  characCtx.clearRect(0, 0, 500, 500);
+  characCtx.drawImage(characSprites[3][0][0], 0, 0, 500, 500);
 });
 
 //Change character sprites/animations
@@ -1248,8 +1248,8 @@ function characAnimation() {
       clearInterval(characMove);
     }
     else {
-      characCtx.clearRect(0, 0, 1000, 1000);
-      characCtx.drawImage(characSprites[characDirection][characStat][frame[characStat]], 0, 0, 1000, 1000);
+      characCtx.clearRect(0, 0, 500, 500);
+      characCtx.drawImage(characSprites[characDirection][characStat][frame[characStat]], 0, 0, 500, 500);
       if ((frame[characStat] == 0 && frameAlter[characStat] < 0) || (frame[characStat] == statusOffsprings[characStat]-1 && frameAlter[characStat] > 0)) {
         frameAlter[characStat] *= -1;
       }
