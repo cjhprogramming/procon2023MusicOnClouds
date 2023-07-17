@@ -1,4 +1,4 @@
-# くものうえ、うた (Music in Clouds)
+# くものうえ、うた (Music on Clouds)
 ## for Hatsune Miku "Magical Mirai 2023" Programming Contest
 
 画面の任意の位置をクリックすると、ミクがその位置に移動します。 このとき、左クリックすると雲を消しながら移動し、右クリックすると雲は消えません。 モバイルでは左下に追加のボタンを追加し、移動時に雲を消すか選べます。
