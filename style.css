@@ -104,13 +104,13 @@ body {
   position: absolute;
   width: 200px;
   height: 200px;
-  filter: brightness(50%);
+  filter: brightness(30%);
 }
 .audienceArmMove{
   position: absolute;
   width: 150px;
   height: 150px;
-  filter: brightness(30%);
+  filter: brightness(70%);
 
   animation-name: rotating;
   animation-iteration-count: infinite;
@@ -529,7 +529,7 @@ p.english{
   -webkit-user-select: none;
   user-select: none;
   opacity: 0.5;
-  filter: blur(3px) brightness(150%);
+  filter: blur(3px) brightness(120%);
   left: 0;
   bottom: 100vh;
   width: 40vw;
@@ -636,10 +636,10 @@ p.english{
 
 @keyframes rotating {
   0% {
-    rotate: 80deg;
+    rotate: 60deg;
   }
   100% {
-    rotate: -80deg;
+    rotate: -60deg;
   }
 }
 

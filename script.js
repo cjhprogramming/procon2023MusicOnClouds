@@ -172,7 +172,7 @@ function delChar() {
 }
 
 const colors = [
-  "rgb(255, 0, 225)",
+  "rgb(255, 0, 145)",
   "rgb(255, 198, 28)",
   "rgb(0, 191, 7)",
   "rgb(60, 0, 255)",
