@@ -95,6 +95,8 @@ var autoPlay = false;
 var selectedRadius = trackRadius.value, selectedBlur = trackBlur.value, selectedSpeed = trackSpeed.value; 
 var colorSeq = 0;
 var radius = 80, angle = 0;
+var characterNumber = 0;
+var delStartCharacterNumber = 0, delEndCharacterNumber = 0, phrStart = true;
 
 function isMobile() {
   var mobiles = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -161,7 +163,7 @@ player.addListener({
 });
 
 //Delete a phrase
-function delChar() {
+function delChar(delStart, delEnd) {
   var nl = document.getElementsByClassName("newLyr");
   var todel = nl.length;
   setTimeout(() => {  
@@ -169,6 +171,11 @@ function delChar() {
       nl[i].style.transform = "scale(0)";
     }
   }, b.duration*2);
+  setTimeout(() => {
+    for (var i = delStart; i<=delEnd; i++){
+      document.getElementById("newLyrics"+i).remove();
+    }
+  }, b.duration*2 + 510);
 }
 
 const colors = [
@@ -181,7 +188,12 @@ const colors = [
 
 //Add a new character
 function newChar(current) {
-  
+  characterNumber += 1;
+  if (phrStart) {
+    phrStart = false;
+    delStartCharacterNumber = characterNumber;
+  }
+
   const div = document.createElement("div");
   div.appendChild(document.createTextNode(current.text));
   
@@ -189,6 +201,7 @@ function newChar(current) {
 
   container.style.position = "absolute";
   container.className = "newLyr"
+  container.id = "newLyrics" + characterNumber;
   container.style.color = colors[colorSeq];
   colorSeq = (colorSeq+1)%5;
   if (lyricStat == 1){
@@ -206,13 +219,16 @@ function newChar(current) {
 
   if (current.parent.parent.lastChar === current){
     radius = 80;
-    delChar();
+    delEndCharacterNumber = characterNumber;
+    phrStart = true;
+    delChar(delStartCharacterNumber, delEndCharacterNumber);
   }
 }
 
 //Delete all characters created
 function resetChars() {
   c = null;
+  phrStart = true;
   colorSeq = 0;
   radius = 80;
   angle = 0;
