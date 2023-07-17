@@ -3,7 +3,9 @@
 
 「音楽が私たちとミクをつなぐ」という発想に基づいて、ミクと私たちの間をふさぐ雲をヒーローミクが歌いながら歩くと歌がその雲をなくすという感じの作品を作りました。
 
-画面の任意の位置をクリックすると、ミクがその位置に移動します。 このとき、左クリックすると雲を消しながら移動し、右クリックすると雲は消えません。 モバイルでは左下に追加のボタンを追加し、移動時に雲を消すか選べます。 上下左右の4方向に全部ミクが動くスプライトアニメーションが実装されています。
+画面の任意の位置をクリックすると、ミクがその位置に移動します。 このとき、左クリックすると雲を消しながら移動し、右クリックすると雲は消えません。 モバイルでは左下に追加のボタンを追加し、移動時に雲を消すか選べます。 雲の上に雲を描きながら遊ぶこともでき、下にいる観客（私たち）を全部見るために雲を全部消してしまうことを目標にプレイすることもできます。
+
+上下左右の4方向に全部ミクが動くスプライトアニメーションが実装されています。
 
 歌詞は基本的にミクが動く時はミクが動いた場所にでき、停止している時はミクを中心に螺旋形で現れます。 ただし、ミクが端に停止しているときは運が悪いとき文字間の重畳が起こることがあります。 晴天を表す虹からインスピレーションを得て、全部で5色が順番に歌詞の色になります。 また、長い間登場した歌詞はますます透明になり、小さくなります。 これにより、先に登場した歌詞と後で登場した歌詞を区別できるようになりました。
 
@@ -21,7 +23,9 @@
 
 Based on the idea that [Music connects Miku and us], the clouds blocking us from Miku are cleared by the music of Hero Miku singing and walking on the clouds in this program.
 
-If you click an arbitrary position on the screen, Miku moves to that position. Clicking the left button of the mouse enables Miku to clear clouds while she walks, while clicking the right button makes Miku only move. For mobile users, a button on the left-bottom enables users to select if they want to clear the clouds or not in the next move. Miku's sprite animations are all implemented for 4 directions: up, down, right, left.
+If you click an arbitrary position on the screen, Miku moves to that position. Clicking the left button of the mouse enables Miku to clear clouds while she walks, while clicking the right button makes Miku only move. For mobile users, a button on the left-bottom enables users to select if they want to clear the clouds or not in the next move. Users can play by either drawing on the cloud or clearing all of the clouds to see the audiences(us).
+
+Miku's sprite animations are all implemented for 4 directions: up, down, right, left.
 
 The lyric characters appear where miku has moved if she is moving. If she is staying still, the characters appear as a spiral shape around her. However, if Miku is on the corner of the screen, there may be some overlaps between the characters in unlucky situations. Colors from the rainbow which is the symbol of a clear sky, the lyric character's colors are changing constantly between some 5 colors. Also, the character becomes more transparent and smaller after it appears. This enables users to distinguish between new characters and old characters.
 
