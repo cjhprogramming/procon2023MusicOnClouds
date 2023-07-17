@@ -541,11 +541,6 @@ p.english{
 #information {
   z-index: 1000;
 }
-#information.disabled{
-  visibility: hidden;
-  display: none;
-  overflow: hidden;
-}
 #howToPlay {
   position: absolute;
   z-index: inherit;

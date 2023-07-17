@@ -1346,5 +1346,5 @@ startBg.addEventListener("mouseup", function() {
 //How To Play
 //Close
 document.querySelector("#howToPlayExit").addEventListener('click', function() {
-  document.querySelector("#information").className = "disabled";
+  document.getElementById("information").remove();
 });
