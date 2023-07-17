@@ -343,6 +343,27 @@ p.english{
   border-width: 5px;
 }
 
+/*         */
+/* warning */
+/*         */
+#autoDrawing {
+  position: absolute;
+  width: 10vw;
+  left: 45vw;
+  bottom: 5vh;
+
+  animation: create_and_delete_noSizeChange;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+#autoDrawing.disabled {
+  visibility: hidden;
+  display: none;
+  overflow: hidden;
+}
+
 /*                 */
 /* screenshot mode */
 /*                 */
@@ -562,20 +583,18 @@ p.english{
   }
 }
 
-@keyframes create_and_delete1 {
-0% {
-    opacity: 1;
-    transform: scale(1);
+@keyframes create_and_delete_noSizeChange {
+  0% {
+    opacity: 0;
   }
-  98% {
-    opacity:0;
-    transform:scale(0);
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
   }
   100% {
-    opacity:0;
-    overflow:hidden;
-    display: none;
-    visibility: hidden;
+    opacity: 0;
   }
 }
 

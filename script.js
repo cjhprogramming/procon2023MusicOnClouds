@@ -32,6 +32,8 @@ const trackSpeed = document.querySelector("#trackSpeed");
 const replay = document.querySelector("#replay");
 const autoDraw = document.querySelector("autoDraw");
 
+const autoDrawing = document.querySelector("#autoDrawing");
+
 const drawButtons = document.querySelector("#drawButtons");
 const panel = document.querySelector("#panel");
 const panelCtx = panel.getContext('2d');
@@ -363,6 +365,7 @@ function setDirection(x1, y1, x2, y2) {
 
 var globalStopTracing = true;
 var moveCount = 0;
+var warningCount = 0;
 
 //When left click/touch
 canvas.addEventListener('click', function(e) {
@@ -413,6 +416,16 @@ canvas.addEventListener('click', function(e) {
       }
     }, 1000*t_to_dest+10);
   }
+  else if (player.isPlaying) {
+    warningCount += 1;
+    var currentWarningCount = warningCount;
+    autoDrawing.className = "";
+    setTimeout(() => {
+      if (warningCount == currentWarningCount){
+        autoDrawing.className = "disabled";
+      }
+    }, 1000);
+  }
 });
 
 //When right click
@@ -447,6 +460,16 @@ canvas.addEventListener('contextmenu', function(e) {
         characStat = 0;
       }
     }, 1000*t_to_dest+10);
+  }
+  else if (!mobile&&player.isPlaying) {
+    warningCount += 1;
+    var currentWarningCount = warningCount;
+    autoDrawing.className = "";
+    setTimeout(() => {
+      if (warningCount == currentWarningCount){
+        autoDrawing.className = "disabled";
+      }
+    }, 1000);
   }
 });
 
@@ -1221,6 +1244,8 @@ startBg.addEventListener("mouseup", function() {
   overlay.className = "";
   slide.className = "disabled";
   charac.className = "able";
+
+  autoPlay = false;
 
   selectSong();
   var tryPlay = setInterval(function() {
