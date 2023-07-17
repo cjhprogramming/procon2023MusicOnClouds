@@ -109,11 +109,13 @@ if (!mobile){
   tracking.style.visibility = "hidden";
 }
 
-var xposit = canvas.offsetWidth/2-charac.offsetWidth/2;
-var yposit = canvas.offsetHeight/2-charac.offsetHeight/2;
-charac.style.transitionDuration = "0s";
-charac.style.transform = "translate("+ xposit + "px," + yposit + "px)";
-
+function characterPositionInit() {
+  var xposit = canvas.offsetWidth/2-charac.offsetWidth/2;
+  var yposit = canvas.offsetHeight/2-charac.offsetHeight/2;
+  charac.style.transitionDuration = "0s";
+  charac.style.transform = "translate("+ xposit + "px," + yposit + "px)";
+}
+characterPositionInit();
 
 //Related to music play
 player.addListener({
@@ -1308,6 +1310,7 @@ startBg.addEventListener("mouseup", function() {
   overlay.className = "";
   slide.className = "disabled";
   charac.className = "able";
+  characterPositionInit();
 
   autoPlay = false;
 
