@@ -155,6 +155,13 @@ body {
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
+#character.stand {
+  animation-name: popup;
+  animation-iteration-count: infinite;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
 
 /*                                      */
 /* circle appearing at clicked position */
@@ -351,6 +358,7 @@ p.english{
 /*         */
 /* warning */
 /*         */
+
 #autoDrawing {
   position: absolute;
   width: 10vw;
@@ -521,10 +529,10 @@ p.english{
   -webkit-user-select: none;
   user-select: none;
   opacity: 0.5;
-  filter: blur(40px) brightness(150%);
+  filter: blur(3px) brightness(150%);
   left: 0;
   bottom: 100vh;
-  width: 20vw;
+  width: 40vw;
   height: 200vh;
 }
 
@@ -642,3 +650,59 @@ p.english{
     rotate: 360deg;
   }
 }
+
+/*
+@keyframes popup {
+  0% {
+    scale: 1;
+  }
+  
+  8% {
+    scale: 0.99;
+  }
+
+  16% {
+    scale: 0.96;
+  }
+
+  24% {
+    scale: 0.917;
+  }
+
+  32% {
+    scale: 0.861;
+  }
+
+  36% {
+    scale: 0.831;
+  }
+
+  40% {
+    scale: 0.8;
+  }
+  
+  44% {
+    scale: 0.831;
+  }
+
+  48% {
+    scale: 0.861;
+  }
+
+  56% {
+    scale: 0.917;
+  }
+
+  64% {
+    scale: 0.96;
+  }
+
+  72% {
+    scale: 0.99;
+  }
+  
+  80% {
+    scale: 1;
+  }
+}
+*/

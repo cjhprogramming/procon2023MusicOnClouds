@@ -1223,6 +1223,16 @@ function characAnimation() {
         frameAlter[characStat] *= -1;
       }
       frame[characStat] += frameAlter[characStat];
+      
+      /*
+      if (characStat == 0 && charac.className != "stand") {
+        charac.style.transitionDuration = "0.7s";
+        charac.className = "stand";
+      }
+      else if (characStat != 0) {
+        charac.className = ""
+      }
+      */
     }
   }, 100);
 }
