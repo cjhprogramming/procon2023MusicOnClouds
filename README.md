@@ -14,7 +14,9 @@
 このコンテストに参加できて光栄でした。 開催してくださったすべての方々に感謝いたします。
 
 
+
 (English)
+
 If you click an arbitrary position on the screen, Miku moves to that position. Clicking the left button of the mouse enables Miku to clear clouds while she walks, while clicking the right button makes Miku only move. For mobile users, a button on the left-bottom enables users to select if they want to clear the clouds or not in the next move. Miku's sprite animations are all implemented for 4 directions: up, down, right, left.
 
 The lyric characters appear where miku has moved if she is moving. If she is staying still, the characters appear as a spiral shape around her. However, if Miku is on the corner of the screen, there may be some overlaps between the characters in unlucky situations. Colors from the rainbow which is the symbol of a clear sky, the lyric character's colors are changing constantly between some 5 colors. Also, the character becomes more transparent and smaller after it appears. This enables users to distinguish between new characters and old characters.
