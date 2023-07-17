@@ -228,7 +228,7 @@ for(var i = 0; i<horizontalAudience; i++){
     var audienceSet = document.createElement('var');
     
     var audiencePic = document.createElement('img');
-    audiencePic.src = "images/audienceNew.png";
+    audiencePic.src = "images/audience"+ (Math.floor(Math.random()*6)%6+1) +".png";
     audiencePic.className = "audienceBody";
     audiencePic.style.left = (canvas.offsetWidth-horizontalAudience*160)/2 + i*160 + "px";
     audiencePic.style.top = (canvas.offsetHeight-verticalAudience*140)/2 + j*140 + "px";
