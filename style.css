@@ -500,7 +500,7 @@ p.english{
   pointer-events : none;
   z-index: 9000;
   line-height: 2em;
-  font-size: 5vh;
+  font-size: 4.5vh;
   font-weight: 1000;
   font-family: "jkMaru";
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
