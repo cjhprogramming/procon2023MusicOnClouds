@@ -173,8 +173,8 @@ function delChar() {
 
 const colors = [
   "rgb(255, 0, 225)",
-  "rgb(255, 208, 0)",
-  "rgb(0, 255, 26)",
+  "rgb(255, 95, 31)",
+  "rgb(0, 191, 7)",
   "rgb(60, 0, 255)",
   "rgb(208, 0, 255)"
 ];
@@ -192,13 +192,13 @@ function newChar(current) {
   container.style.color = colors[colorSeq];
   colorSeq = (colorSeq+1)%5;
   if (lyricStat == 1){
-    container.style.left = Math.max(0, Math.min(canvas.offsetWidth-30, charac.getBoundingClientRect().left+charac.offsetWidth/2+div.offsetWidth/2+Math.cos(angle)*radius))+"px";
+    container.style.left = Math.max(0, Math.min(canvas.offsetWidth*0.95, charac.getBoundingClientRect().left+charac.offsetWidth/2+div.offsetWidth/2+Math.cos(angle)*radius))+"px";
     container.style.top = Math.max(0, Math.min(canvas.offsetHeight*0.92, charac.getBoundingClientRect().top+charac.offsetHeight*3/5+div.offsetHeight/2+Math.sin(angle)*radius))+"px";
     angle = angle+(Math.PI/8);
     radius = radius+15;
   }
   if (lyricStat == 2){
-    container.style.left = Math.max(0, Math.min(canvas.offsetWidth-30, charac.getBoundingClientRect().left+charac.offsetWidth/2-container.offsetWidth/2))+"px";
+    container.style.left = Math.max(0, Math.min(canvas.offsetWidth*0.95, charac.getBoundingClientRect().left+charac.offsetWidth/2-container.offsetWidth/2))+"px";
     container.style.top = Math.max(0, Math.min(canvas.offsetHeight*0.92, charac.getBoundingClientRect().top+charac.offsetHeight-30))+"px";
   }
   container.appendChild(div);

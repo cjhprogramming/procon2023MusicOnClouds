@@ -110,7 +110,7 @@ body {
   position: absolute;
   width: 150px;
   height: 150px;
-  filter: brightness(50%);
+  filter: brightness(30%);
 
   animation-name: rotating;
   animation-iteration-count: infinite;
@@ -463,10 +463,10 @@ p.english{
   transition: all 0.2s ease;
 }
 #nextSong{
-  right:28vw;
+  right:24vw;
 }
 #previousSong{
-  left:28vw;
+  left:24vw;
 }
 
 /* start button */
@@ -589,6 +589,7 @@ p.english{
   100% {
     opacity: 0.5;
     scale: 0.6;
+    /*color: #afafaf;*/
   }
 }
 
