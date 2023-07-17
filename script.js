@@ -91,7 +91,7 @@ var characStat = 0, characDirection = 3;
 var willTrack = true;
 var autoPlay = false;
 var selectedRadius = trackRadius.value, selectedBlur = trackBlur.value, selectedSpeed = trackSpeed.value; 
-var radius = 50, angle = 0;
+var radius = 80, angle = 0;
 
 function isMobile() {
   var mobiles = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
@@ -183,18 +183,18 @@ function newChar(current) {
     container.style.left = Math.max(0, Math.min(canvas.offsetWidth-30, charac.getBoundingClientRect().left+charac.offsetWidth/2+div.offsetWidth/2+Math.cos(angle)*radius))+"px";
     container.style.top = Math.max(0, Math.min(canvas.offsetHeight*0.92, charac.getBoundingClientRect().top+charac.offsetHeight*3/5+div.offsetHeight/2+Math.sin(angle)*radius))+"px";
     angle = angle+(Math.PI/8);
-    radius = radius+10;
+    radius = radius+15;
   }
   if (lyricStat == 2){
     container.style.color = "rgb(255, 0, 225)";
-    container.style.left = charac.getBoundingClientRect().left+charac.offsetWidth/2-container.offsetWidth/2+"px";
-    container.style.top = charac.getBoundingClientRect().top+charac.offsetHeight-30+"px";
+    container.style.left = Math.max(0, Math.min(canvas.offsetWidth-30, charac.getBoundingClientRect().left+charac.offsetWidth/2-container.offsetWidth/2))+"px";
+    container.style.top = Math.max(0, Math.min(canvas.offsetHeight*0.92, charac.getBoundingClientRect().top+charac.offsetHeight-30))+"px";
   }
   container.appendChild(div);
   textContainer.appendChild(container);
 
   if (current.parent.parent.lastChar === current){
-    radius = 50;
+    radius = 80;
     delChar();
   }
 }

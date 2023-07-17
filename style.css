@@ -60,7 +60,7 @@ body {
   position: absolute;
   top: 40vh;
   width: 100vw;
-  font-size: 40px;
+  font-size: 5.36vh;
   text-align: center;
 }
 
@@ -142,8 +142,8 @@ body {
   background: #ffffff00;
   transition-duration: 03s;
   transition-timing-function: linear;
-  width: 20vh;
-  height: 20vh;
+  width: 30vh;
+  height: 30vh;
 }
 #character.disabled {
   opacity: 0;
@@ -239,26 +239,26 @@ body {
   left: 100vw;
   top: 20%;
   background-color:#ffdbf4;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+  border-top-left-radius: 0.8vh;
+  border-bottom-left-radius: 0.8vh;
   border-color: #000000;
-  border: 2px solid;
+  border: 0.26vh solid;
 
   transition-duration: 0.5s;
   transition-timing-function: ease-in-out;
 }
 p{
-  margin: 4px;
+  margin: 0.5vh;
   text-align: center;
-  font-size: 15px;
+  font-size: 2vh;
 }
 p.japanese{
-  height: 15px;
-  font-size: 15px;
+  height: 2vh;
+  font-size: 2vh;
 }
 p.english{
-  height: 12px;
-  font-size: 12px;
+  height: 1.6vh;
+  font-size: 1.6vh;
 }
 .range {
   display: flex;
@@ -309,11 +309,11 @@ p.english{
 }
 #drawButtons{
   position: absolute;
-  width: 60vw;
+  width: 70vw;
   height: 30vh;
   bottom: 100vh;
-  left: 20vw;
-  border: 8px solid;
+  left: 15vw;
+  border: 1.1vh solid;
   background-color: #ffffff;
   border-color: #ffbcb7;
   border-radius: 3vh;
@@ -330,17 +330,17 @@ p.english{
   display: flex;
 }
 #particles > p, #sets > p{
-  width: 100px;
+  width: 6.51vw;
   text-align: center;
 }
 .particle, .set{
   position: relative;
   width: 6vw;
-  height: 4vw;
-  margin: 10px;
+  height: 8.2vh;
+  margin: 0.5vw;
   border: solid #000000;
-  border-radius: 20px;
-  border-width: 5px;
+  border-radius: 2.68vh;
+  border-width: 0.67vh;
 }
 
 /*         */
@@ -370,8 +370,8 @@ p.english{
 
 #screenshotButton {
   position:absolute;
-  top: 10px;
-  left: 10px;
+  top: 1.34vh;
+  left: 1.34vh;
   opacity: 0.5;
   transition-duration: 0.5s;
 }
@@ -408,14 +408,8 @@ p.english{
   height: auto;
 }
 #titleText{
-  height: 40vh;
+  width: 70vw;
   margin: auto;
-}
-#title h1 {
-  text-align: center;
-  font-size: 15vh;
-  color: #000000;
-  text-shadow: #ffffff 0 0 5px;
 }
 
 /* song list */
@@ -495,7 +489,7 @@ p.english{
   pointer-events : none;
   z-index: 0;
   line-height: 2em;
-  font-size: 4vh;
+  font-size: 5vh;
   font-weight: 1000;
   font-family: "jkMaru";
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
