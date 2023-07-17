@@ -365,7 +365,6 @@ function setDirection(x1, y1, x2, y2) {
 
 var globalStopTracing = true;
 var moveCount = 0;
-var warningCount = 0;
 
 //When left click/touch
 canvas.addEventListener('click', function(e) {
@@ -417,14 +416,12 @@ canvas.addEventListener('click', function(e) {
     }, 1000*t_to_dest+10);
   }
   else if (player.isPlaying) {
-    warningCount += 1;
-    var currentWarningCount = warningCount;
-    autoDrawing.className = "";
-    setTimeout(() => {
-      if (warningCount == currentWarningCount){
+    if (autoDrawing.className == "disabled") {
+      autoDrawing.className = "";
+      setTimeout(() => {
         autoDrawing.className = "disabled";
-      }
-    }, 1000);
+      }, 1000);
+    }
   }
 });
 
@@ -462,14 +459,12 @@ canvas.addEventListener('contextmenu', function(e) {
     }, 1000*t_to_dest+10);
   }
   else if (!mobile&&player.isPlaying) {
-    warningCount += 1;
-    var currentWarningCount = warningCount;
-    autoDrawing.className = "";
-    setTimeout(() => {
-      if (warningCount == currentWarningCount){
+    if (autoDrawing.className == "disabled") {
+      autoDrawing.className = "";
+      setTimeout(() => {
         autoDrawing.className = "disabled";
-      }
-    }, 1000);
+      }, 1000);
+    }
   }
 });
 
