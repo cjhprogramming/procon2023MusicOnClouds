@@ -1228,29 +1228,25 @@ function characAnimation() {
 }
 
 //Light in sky
-lightSky.style.transform = "rotate(" + (-Math.atan(canvas.offsetHeight*3.2/500)*180/Math.PI) + "deg)";
+lightSky.style.rotate = (90-Math.atan(canvas.offsetHeight*3.2/500)*180/Math.PI) + "deg";
 function generateLight() {
-  if (Math.random() > 0.2) {
-    lightSky.style.transitionDuration = "0s";
-    lightSky.style.transform = "translate(" + (Math.floor(Math.random()*(canvas.offsetWidth-lightSky.offsetWidth))+lightSky.offsetWidth*2) + "px, -" + canvas.offsetHeight*1.2 + "px)";
-    setTimeout(() => {
-      lightSky.style.transitionDuration = "9.5s";
-      lightSky.style.transform = "translate(" + (lightSky.getBoundingClientRect().left - 100) + "px, 0)";
-    }, 100);
-  }
+  lightSky.style.transitionDuration = "0s";
+  lightSky.style.transform = "translate(" + (Math.floor(Math.random()*(canvas.offsetWidth-lightSky.offsetWidth))+lightSky.offsetWidth*2) + "px, -" + canvas.offsetHeight*1.2 + "px)";
+  setTimeout(() => {
+    lightSky.style.transitionDuration = "9.5s";
+    lightSky.style.transform = "translate(" + (lightSky.getBoundingClientRect().left - 500) + "px, " + canvas.offsetHeight*3.2 + "px)";
+  }, 100);
   var lightFromSky = setInterval(() => {
     if(!nowPlaying) {
       clearInterval(lightFromSky);
     }
     else {
-      if (Math.random() > 0.2) {
-        lightSky.style.transitionDuration = "0s";
-        lightSky.style.transform = "translate(" + (Math.floor(Math.random()*(canvas.offsetWidth-lightSky.offsetWidth))+lightSky.offsetWidth*2) + "px, -" + canvas.offsetHeight*1.2 + "px)";
-        setTimeout(() => {
-          lightSky.style.transitionDuration = "9.5s";
-          lightSky.style.transform = "translate(" + (lightSky.getBoundingClientRect().left - 500) + "px, " + canvas.offsetHeight*3.2 + "px)";
-        }, 100);
-      }
+      lightSky.style.transitionDuration = "0s";
+      lightSky.style.transform = "translate(" + (Math.floor(Math.random()*(canvas.offsetWidth-lightSky.offsetWidth))+lightSky.offsetWidth*2) + "px, -" + canvas.offsetHeight*1.2 + "px)";
+      setTimeout(() => {
+        lightSky.style.transitionDuration = "9.5s";
+        lightSky.style.transform = "translate(" + (lightSky.getBoundingClientRect().left - 500) + "px, " + canvas.offsetHeight*3.2 + "px)";
+      }, 100);
     }
   }, 10000);
 }

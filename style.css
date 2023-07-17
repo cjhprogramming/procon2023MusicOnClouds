@@ -521,10 +521,10 @@ p.english{
   -webkit-user-select: none;
   user-select: none;
   opacity: 0.5;
-  filter: blur(40px);
+  filter: blur(40px) brightness(150%);
   left: 0;
   bottom: 100vh;
-  width: 30vh;
+  width: 20vw;
   height: 200vh;
 }
 
