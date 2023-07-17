@@ -7,7 +7,7 @@
 
 上下左右の4方向に全部ミクが動くスプライトアニメーションが実装されています。
 
-歌詞は基本的にミクが動く時はミクが動いた場所にでき、停止している時はミクを中心に螺旋形で現れます。 ただし、ミクが端に停止しているときは運が悪いとき文字間の重畳が起こることがあります。(過去版の問題でしたが、まだ最終版にも残っている可能性があるので記入しました。)
+歌詞は基本的にミクが動く時はミクが動いた場所にでき、停止している時はミクを中心に螺旋形で現れます。 ただし、ミクが端に停止しているときは運が悪いとき文字間の重畳が起こることがあります。(過去版の問題でしたが、まだ最終版にも残っている可能性があるので記入しました。) また、ミクの速さが遅すぎると文字間の重なりが発生することもあります。
 
 晴天を表す虹からインスピレーションを得て、全部で5色が順番に歌詞の色になります。 また、長い間登場した歌詞はますます透明になり、小さくなります。 これにより、先に登場した歌詞と後で登場した歌詞を区別できるようになりました。
 
@@ -29,7 +29,7 @@ If you click an arbitrary position on the screen, Miku moves to that position. C
 
 Miku's sprite animations are all implemented for 4 directions: up, down, right, left.
 
-The lyric characters appear where miku has moved if she is moving. If she is staying still, the characters appear as a spiral shape around her. However, if Miku is on the corner of the screen, there may be some overlaps between the characters in unlucky situations. (It was a problem for the previous version, but it might still in the final version.)
+The lyric characters appear where miku has moved if she is moving. If she is staying still, the characters appear as a spiral shape around her. However, if Miku is on the corner of the screen, there may be some overlaps between the characters in unlucky situations. (It was a problem for the previous version, but it might still in the final version.) Also, if Miku's speed is too slow, the characters can also be overlapped.
 
 Colors from the rainbow which is the symbol of a clear sky, the lyric character's colors are changing constantly between some 5 colors. Also, the character becomes more transparent and smaller after it appears. This enables users to distinguish between new characters and old characters.
 
