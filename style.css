@@ -589,7 +589,7 @@ p.english{
   100% {
     opacity: 0.5;
     scale: 0.6;
-    /*color: #afafaf;*/
+    color: #afafaf;
   }
 }
 
@@ -651,59 +651,3 @@ p.english{
     rotate: 360deg;
   }
 }
-
-/*
-@keyframes popup {
-  0% {
-    scale: 1;
-  }
-  
-  8% {
-    scale: 0.99;
-  }
-
-  16% {
-    scale: 0.96;
-  }
-
-  24% {
-    scale: 0.917;
-  }
-
-  32% {
-    scale: 0.861;
-  }
-
-  36% {
-    scale: 0.831;
-  }
-
-  40% {
-    scale: 0.8;
-  }
-  
-  44% {
-    scale: 0.831;
-  }
-
-  48% {
-    scale: 0.861;
-  }
-
-  56% {
-    scale: 0.917;
-  }
-
-  64% {
-    scale: 0.96;
-  }
-
-  72% {
-    scale: 0.99;
-  }
-  
-  80% {
-    scale: 1;
-  }
-}
-*/

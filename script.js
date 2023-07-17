@@ -173,7 +173,7 @@ function delChar() {
 
 const colors = [
   "rgb(255, 0, 225)",
-  "rgb(255, 95, 31)",
+  "rgb(255, 198, 28)",
   "rgb(0, 191, 7)",
   "rgb(60, 0, 255)",
   "rgb(208, 0, 255)"
@@ -1221,16 +1221,6 @@ function characAnimation() {
         frameAlter[characStat] *= -1;
       }
       frame[characStat] += frameAlter[characStat];
-      
-      /*
-      if (characStat == 0 && charac.className != "stand") {
-        charac.style.transitionDuration = "0.7s";
-        charac.className = "stand";
-      }
-      else if (characStat != 0) {
-        charac.className = ""
-      }
-      */
     }
   }, 100);
 }
