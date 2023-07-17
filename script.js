@@ -719,7 +719,7 @@ const toMoveSnow = [
   [false, 50, 0],
   [false, 0, 0]
 ];
-const kSnow = 1.5;
+const kSnow = 1.8;
 
 const toMoveStar = [
   [false, 100, 0],
