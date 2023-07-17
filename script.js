@@ -595,7 +595,7 @@ function moveToDest(startX, startY, idx, maxi, toMove, k){
 }
 
 //Function for sets
-function moveToDestRelative(startX, startY, idx, maxi, toMove, k){
+function moveToDestRelative(idx, maxi, toMove){
   if (idx >= maxi){
     lyricStat = 1;
     characStat = 0;
@@ -604,8 +604,8 @@ function moveToDestRelative(startX, startY, idx, maxi, toMove, k){
   }
 
   var stopTracing = toMove[idx][0];
-  var tox = (startX+toMove[idx][1]*k)*canvas.offsetWidth/1536-charac.offsetWidth/2;
-  var toy = (startY+toMove[idx][2]*k)*canvas.offsetHeight/746 - charac.offsetHeight*2/3;
+  var tox = (toMove[idx][1])*canvas.offsetWidth/1536-charac.offsetWidth/2;
+  var toy = (toMove[idx][2])*canvas.offsetHeight/746 - charac.offsetHeight;
   var rect = charac.getBoundingClientRect();
   var t_to_dest = distant(rect.left, rect.top, tox, toy)/selectedSpeed;
   charac.style.transitionDuration =  t_to_dest+ "s";
@@ -631,7 +631,7 @@ function moveToDestRelative(startX, startY, idx, maxi, toMove, k){
   setTimeout(() => {
     stopTracing = true;
     console.log(tox, toy, idx);
-    moveToDestRelative(startX, startY, idx+1, maxi, toMove, k); 
+    moveToDestRelative(idx+1, maxi, toMove); 
   }, t_to_dest*1000+10);
 }
 
@@ -1005,7 +1005,7 @@ document.querySelector("#mikuJp").addEventListener("click", function() {
   if (player.isPlaying && !autoPlay){
     lyricStat = 2;
     autoPlay = true;
-    moveToDestRelative(0, 0, 0, toMoveMikuJp.length, toMoveMikuJp, 1);
+    moveToDestRelative(0, toMoveMikuJp.length, toMoveMikuJp);
   }
 });
 
@@ -1013,7 +1013,7 @@ document.querySelector("#mikuEng").addEventListener("click", function() {
   if (player.isPlaying && !autoPlay){
     lyricStat = 2;
     autoPlay = true;
-    moveToDestRelative(0, 0, 0, toMoveMikuEng.length, toMoveMikuEng, 1);
+    moveToDestRelative(0, toMoveMikuEng.length, toMoveMikuEng);
   }
 });
 
@@ -1021,7 +1021,7 @@ document.querySelector("#hero").addEventListener("click", function() {
   if (player.isPlaying && !autoPlay){
     lyricStat = 2;
     autoPlay = true;
-    moveToDestRelative(0, 0, 0, toMoveHero.length, toMoveHero, 1);
+    moveToDestRelative(0, toMoveHero.length, toMoveHero);
   }
 });
 
@@ -1029,7 +1029,7 @@ document.querySelector("#mirai").addEventListener("click", function() {
   if (player.isPlaying && !autoPlay){
     lyricStat = 2;
     autoPlay = true;
-    moveToDestRelative(0, 0, 0, toMoveMirai.length, toMoveMirai, 1);
+    moveToDestRelative(0, toMoveMirai.length, toMoveMirai);
   }
 });
 
@@ -1037,7 +1037,7 @@ document.querySelector("#mikuDraw").addEventListener("click", function() {
   if (player.isPlaying && !autoPlay){
     lyricStat = 2;
     autoPlay = true;
-    moveToDestRelative(0, 0, 0, toMoveMiku.length, toMoveMiku, 1);
+    moveToDestRelative(0, toMoveMiku.length, toMoveMiku);
   }
 });
 
