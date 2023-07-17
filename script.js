@@ -379,6 +379,7 @@ function setDirection(x1, y1, x2, y2) {
 
 var globalStopTracing = true;
 var moveCount = 0;
+var circleNumber = 0;
 
 //When left click/touch
 canvas.addEventListener('click', function(e) {
@@ -402,11 +403,18 @@ canvas.addEventListener('click', function(e) {
     setDirection(rect.left, rect.top, xpos, ypos);
 
     const circ = document.createElement("div");
+    var currentCircleNumber = circleNumber;
+    circleNumber += 1
     circ.className = "newCircle";
+    circ.id = "circleNo"+currentCircleNumber;
     circ.style.position = "absolute";
     circ.style.left = (e.clientX-(canvas.offsetHeight*0.025))+"px";
     circ.style.top = (e.clientY-(canvas.offsetHeight*0.025))+"px";
     clickCircle.appendChild(circ);
+
+    setTimeout(() => {
+      document.getElementById("circleNo" + currentCircleNumber).remove();
+    }, 1000);
 
     charac.style.transitionDuration =  t_to_dest+ "s";
     var traceChar = setInterval(function() {
@@ -455,11 +463,18 @@ canvas.addEventListener('contextmenu', function(e) {
     setDirection(rect.left, rect.top, xpos, ypos);
 
     const circ = document.createElement("div");
+    var currentCircleNumber = circleNumber;
+    circleNumber += 1
     circ.className = "newCircle";
+    circ.id = "circleNo"+currentCircleNumber;
     circ.style.position = "absolute";
     circ.style.left = (e.clientX-(canvas.offsetHeight*0.025))+"px";
     circ.style.top = (e.clientY-(canvas.offsetHeight*0.025))+"px";
     clickCircle.appendChild(circ);
+
+    setTimeout(() => {
+      document.getElementById("circleNo" + currentCircleNumber).remove();
+    }, 1000);
     
     charac.style.transitionDuration = t_to_dest + "s";
     lyricStat = 2;
@@ -1290,6 +1305,14 @@ startBg.addEventListener("mouseup", function() {
       waitUntilStop();
       characAnimation();
       generateLight();
+
+      setTimeout(() => {
+        var audienceArmMoves = document.getElementsByClassName("audienceArmMove");
+        for (var i = 0; i<audienceArmMoves.length; i++) {
+          audienceArmMoves[i].style.animationDuration = b.duration/500 + "s";
+        }
+      }, 1000);
+
       clearInterval(tryPlay);
     }
     else{
