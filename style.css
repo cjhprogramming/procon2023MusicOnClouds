@@ -189,6 +189,8 @@ body {
 }
 .movingCloud {
   -webkit-tap-highlight-color : transparent !important;
+  -webkit-user-select: none;
+  user-select: none;
   position: absolute;
   left: 0;
   top: 0;
@@ -507,6 +509,23 @@ p.english{
   animation-duration: 3.33s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+}
+
+/*              */
+/* light in sky */
+/*              */
+
+#lightSky{
+  position: absolute;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  opacity: 0.5;
+  filter: blur(40px);
+  left: 0;
+  bottom: 100vh;
+  width: 30vh;
+  height: 200vh;
 }
 
 /*             */
