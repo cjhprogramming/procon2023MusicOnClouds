@@ -15,7 +15,7 @@
 
 右上には二つのボタンがあります。 上の雲型ボタンは、画面の雲を埋め直すボタンです。 雲の形は常にランダムに生成されます。 下の歯車状のボタンを押すとパネルが一つ出ます。 パネルには3つのスライディングバーがあり、それぞれ雲が消す幅、雲が消えた場所と残っている場所との境界の柔らかさ、そしてミクが動く速度を調整します。
 
-上段中間の三角形が描かれたボタンを押すと、あらかじめ設定された11個の絵を描くことができるボタンが11個登場します。 このうち上の7つは「パーティクル」を描きますが、「パーティクル」は現在ミクが位置する位置を基準に描かれます。 以下の5つは「セット」を描きますが、「セット」は画面全体を基準に決められた絵を描きます。 自動的に絵を描いている間は、ユーザーが任意でミクを動かすことができません。
+上段中間の三角形が描かれたボタンを押すと、あらかじめ設定された11個の絵を描くことができるボタンが11個登場します。 このうち上の7つは「パーティクル」を描きますが、「パーティクル」は現在ミクが位置する位置を基準に描かれます。 基準点はボタンで赤い点で表示されています。 以下の5つは「セット」を描きますが、「セット」は画面全体を基準に決められた絵を描きます。 自動的に絵を描いている間は、ユーザーが任意でミクを動かすことができません。
 
 このコンテストに参加できて光栄でした。 開催してくださったすべての方々に感謝いたします。
 
@@ -27,16 +27,16 @@ Based on the idea that [Music connects Miku and us], the clouds blocking us from
 
 If you click an arbitrary position on the screen, Miku moves to that position. Clicking the left button of the mouse enables Miku to clear clouds while she walks, while clicking the right button makes Miku only move. For mobile users, a button on the left-bottom enables users to select if they want to clear the clouds or not in the next move. Users can play by either drawing on the cloud or clearing all of the clouds to see the audiences(us).
 
-Miku's sprite animations are all implemented for 4 directions: up, down, right, left.
+Miku's sprite animations are all implemented in 4 directions: up, down, right, and left.
 
-The lyric characters appear where miku has moved if she is moving. If she is staying still, the characters appear as a spiral shape around her. However, if Miku is on the corner of the screen, there may be some overlaps between the characters in unlucky situations. (It was a problem for the previous version, but it might still in the final version.) Also, if Miku's speed is too slow, the characters can also be overlapped.
+The lyric characters appear where Miku has moved if she is moving. If she is staying still, the characters appear as a spiral shape around her. However, if Miku is in the corner of the screen, there may be some overlaps between the characters in unlucky situations. (It was a problem for the previous version, but it might still be in the final version.) Also, if Miku's speed is too slow, the characters can also be overlapped.
 
 Colors from the rainbow which is the symbol of a clear sky, the lyric character's colors are changing constantly between some 5 colors. Also, the character becomes more transparent and smaller after it appears. This enables users to distinguish between new characters and old characters.
 
-On the left top, there is a screenshot button. If you press it, UI like the cloud refill button is hidden. If you press it again, it goes back to original state.
+On the left top, there is a screenshot button. If you press it, UI like the cloud refill button is hidden. If you press it again, it goes back to its original state.
 
-On the right top, there are 2 buttons. The upper cloud-shaped button is the butten for refilling the background's cloud. The shape of the clouds are always random. If you press the lower gear-shaped button, a panel comes out. There are 3 slides in the panel: each operates the width of the cloud clearing, the blur of the border between the cloud and where the cloud is cleaned, and the speed of Miku.
+On the right top, there are 2 buttons. The upper cloud-shaped button is the button for refilling the background's cloud. The shape of the clouds is always random. If you press the lower gear-shaped button, a panel comes out. There are 3 slides in the panel: each operates the width of the cloud clearing, the blur of the border between the cloud and where the cloud is cleaned, and the speed of Miku.
 
-In the upper middle, there is a triangle-shaped button. If you click this button, 11 buttons which you can draw shapes which are already set. The upper 7 buttons are for "Particles", which is drawn starting from the original position of Miku. For contrast, the lower 5 buttens are for “Sets”, which draws shapes based on the full-screen’s coordinates. While drawing automatically, the user can’t move Miku of their own accord.
+In the upper middle, there is a triangle-shaped button. If you click this button, 11 buttons which you can draw shapes that are already set. The upper 7 buttons are for "Particles", which are drawn starting from the original position of Miku. The starting position in the shape is indicated with a red dot in the button. In contrast, the lower 5 buttons are for “Sets”, which draw shapes based on the full screen’s coordinates. While drawing automatically, the user can’t move Miku of their own accord.
 
 It was a great honor for participating in this contest. I really appreciate you for opening this contest.
